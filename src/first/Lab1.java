@@ -17,7 +17,7 @@ import org.jsoup.Jsoup;
 
 public class Lab1 {
 
-	//public static Integer Counter = 0;
+	public static Integer Counter = 0;
 	public static String RemoveTag(Reader reader) throws IOException {
 
 		StringBuilder sb = new StringBuilder();
@@ -33,11 +33,11 @@ public class Lab1 {
 	}
 
 	public static void SaveHtml(String adres) throws IOException {
-		//Counter++;
+		Counter++;
 		URL url = new URL(adres);
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openConnection().getInputStream(), "UTF-8"));
 
-		FileWriter fWriter = new FileWriter("C:\\Users\\HP\\Desktop\\SemWeb\\lab1\\Onet.html");
+		FileWriter fWriter = new FileWriter("C:\\Users\\HP\\Desktop\\SemWeb\\lab1\\Wiki"+Counter+".html");
 
 		BufferedWriter writer = new BufferedWriter(fWriter);
 
@@ -55,12 +55,12 @@ public class Lab1 {
 
 	public static void SaveTxt() throws IOException {
 
-		FileReader reader = new FileReader("C:\\Users\\HP\\Desktop\\SemWeb\\lab1\\Onet.html");
+		FileReader reader = new FileReader("C:\\Users\\HP\\Desktop\\SemWeb\\lab1\\Wiki"+Counter+".html");
 
 		List<String> patternList = Arrays.asList("\\,", "\\.", "\\!", "\\?", "\\(", "\\)", "\\-", "\\<", "\\>", "\\t+",
 				"\\:");
 
-		File file = new File("C:\\Users\\HP\\Desktop\\SemWeb\\lab1\\Onet.txt");
+		File file = new File("C:\\Users\\HP\\Desktop\\SemWeb\\lab1\\Wiki"+Counter+".txt");
 
 		if (!file.exists()) {
 			file.createNewFile();

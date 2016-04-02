@@ -31,7 +31,7 @@ public class View extends Application {
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("Semantic Web");
 		primaryStage.setWidth(1000);
-		primaryStage.setHeight(600);
+		primaryStage.setHeight(750);
 		final GridPane grid = new GridPane();
 		grid.setAlignment(Pos.TOP_CENTER);
 		grid.setHgap(10);
@@ -195,7 +195,7 @@ public class View extends Application {
 		grid.add(lab3, 0, 15);
 		
 		
-		Button download = new Button("Pobierz stronki");
+		Button download = new Button("Poka¿ wyniki");
 		download.setAlignment(Pos.BOTTOM_CENTER);
 		grid.add(download, 0, 16);
 
@@ -210,13 +210,30 @@ public class View extends Application {
 					e1.printStackTrace();
 				}
 				
-				Label logresults = new Label("Pobra³o Stronki");
+				Label logresults = new Label("Pokaza³o wyniki");
 				logresults.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
 				grid.add(logresults, 8, 16);
+				
+				Label Win = new Label("Zwyciezcy:\n"+Lab3.zwyciezcy);
+				Win.setFont(Font.font("Tahoma", FontWeight.NORMAL, 13));
+				Win.setTextAlignment(TextAlignment.CENTER);
+				grid.add(Win, 1, 16);
+				
+				Label Lose = new Label("Przegrani:\n"+Lab3.przegrani);
+				Lose.setFont(Font.font("Tahoma", FontWeight.NORMAL, 13));
+				Lose.setTextAlignment(TextAlignment.CENTER);
+				grid.add(Lose, 2, 16);
+				
+				Label Name = new Label("Nazwy stron: \n"+Lab3.nazwy);
+				Name.setFont(Font.font("Tahoma", FontWeight.NORMAL, 13));
+				Name.setTextAlignment(TextAlignment.CENTER);
+				grid.add(Name, 3, 16);
 
 			}
 
 		});
+		
+	
 
 		Scene scene = new Scene(grid, 400, 375);
 		primaryStage.setScene(scene);
