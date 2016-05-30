@@ -57,7 +57,7 @@ public class Lab5_6 {
 	// przelaruje po plikach, wyszukeju zipy i pobiera z nich zawartosc, wykorzystujac ponizej zaimplementowane funkcjie
 	static void indeksowanie() throws IOException {
 
-		walk("G://1//0//");
+		walk("G://1//0//0//");
 		walk2();
 		if (counter >= 0) {
 			for (String tit : Titles) {
